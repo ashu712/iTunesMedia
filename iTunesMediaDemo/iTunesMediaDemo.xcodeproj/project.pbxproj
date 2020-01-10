@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		474F39C323C7DB9A001B7B19 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474F39C223C7DB9A001B7B19 /* APIManager.swift */; };
+		474F39C523C7DC3E001B7B19 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474F39C423C7DC3E001B7B19 /* APIResponse.swift */; };
+		474F39C823C7DCE5001B7B19 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474F39C723C7DCE5001B7B19 /* Constants.swift */; };
+		474F39CA23C7EBE9001B7B19 /* MediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474F39C923C7EBE9001B7B19 /* MediaCell.swift */; };
 		47F3AC2523C7862F002A2CA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F3AC2423C7862F002A2CA7 /* AppDelegate.swift */; };
 		47F3AC2B23C78630002A2CA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47F3AC2A23C78630002A2CA7 /* Assets.xcassets */; };
 		47F3AC2E23C78630002A2CA7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47F3AC2D23C78630002A2CA7 /* Preview Assets.xcassets */; };
@@ -16,6 +20,7 @@
 		47F3AC9123C791F4002A2CA7 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F3AC9023C791F4002A2CA7 /* DashboardVC.swift */; };
 		47F3AC9323C7920A002A2CA7 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47F3AC9223C7920A002A2CA7 /* Storyboard.storyboard */; };
 		47F3AC9523C7BA46002A2CA7 /* ashu.png in Resources */ = {isa = PBXBuildFile; fileRef = 47F3AC9423C7BA46002A2CA7 /* ashu.png */; };
+		ED05469967B530532AA342AD /* Pods_iTunesMediaDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A650F9874A138691951FD3E2 /* Pods_iTunesMediaDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +41,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1DEB3E676D87FBC84D608BB3 /* Pods-iTunesMediaDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesMediaDemo.release.xcconfig"; path = "Target Support Files/Pods-iTunesMediaDemo/Pods-iTunesMediaDemo.release.xcconfig"; sourceTree = "<group>"; };
+		4122ACA5EDE5258582E7DF72 /* Pods-iTunesMediaDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesMediaDemo.debug.xcconfig"; path = "Target Support Files/Pods-iTunesMediaDemo/Pods-iTunesMediaDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		474F39C223C7DB9A001B7B19 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		474F39C423C7DC3E001B7B19 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		474F39C723C7DCE5001B7B19 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		474F39C923C7EBE9001B7B19 /* MediaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCell.swift; sourceTree = "<group>"; };
 		47F3AC2123C7862F002A2CA7 /* iTunesMediaDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesMediaDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47F3AC2423C7862F002A2CA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47F3AC2A23C78630002A2CA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +62,7 @@
 		47F3AC9023C791F4002A2CA7 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 		47F3AC9223C7920A002A2CA7 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		47F3AC9423C7BA46002A2CA7 /* ashu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ashu.png; sourceTree = "<group>"; };
+		A650F9874A138691951FD3E2 /* Pods_iTunesMediaDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iTunesMediaDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED05469967B530532AA342AD /* Pods_iTunesMediaDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +91,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		474F39C123C7DB84001B7B19 /* API_Helper */ = {
+			isa = PBXGroup;
+			children = (
+				474F39C223C7DB9A001B7B19 /* APIManager.swift */,
+				474F39C423C7DC3E001B7B19 /* APIResponse.swift */,
+			);
+			path = API_Helper;
+			sourceTree = "<group>";
+		};
+		474F39C623C7DCD1001B7B19 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				474F39C723C7DCE5001B7B19 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		47F3AC1823C7862F002A2CA7 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +116,8 @@
 				47F3AC3A23C78630002A2CA7 /* iTunesMediaDemoTests */,
 				47F3AC4523C78630002A2CA7 /* iTunesMediaDemoUITests */,
 				47F3AC2223C7862F002A2CA7 /* Products */,
+				F53520B08E53D24EA1FAB114 /* Pods */,
+				CBAC6A6754E201C4D3F7102E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,6 +136,9 @@
 			children = (
 				47F3AC2423C7862F002A2CA7 /* AppDelegate.swift */,
 				47F3AC9023C791F4002A2CA7 /* DashboardVC.swift */,
+				474F39C923C7EBE9001B7B19 /* MediaCell.swift */,
+				474F39C623C7DCD1001B7B19 /* Constants */,
+				474F39C123C7DB84001B7B19 /* API_Helper */,
 				47F3AC2A23C78630002A2CA7 /* Assets.xcassets */,
 				47F3AC2F23C78630002A2CA7 /* LaunchScreen.storyboard */,
 				47F3AC9223C7920A002A2CA7 /* Storyboard.storyboard */,
@@ -139,6 +174,23 @@
 			path = iTunesMediaDemoUITests;
 			sourceTree = "<group>";
 		};
+		CBAC6A6754E201C4D3F7102E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A650F9874A138691951FD3E2 /* Pods_iTunesMediaDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F53520B08E53D24EA1FAB114 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4122ACA5EDE5258582E7DF72 /* Pods-iTunesMediaDemo.debug.xcconfig */,
+				1DEB3E676D87FBC84D608BB3 /* Pods-iTunesMediaDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,9 +198,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 47F3AC4B23C78630002A2CA7 /* Build configuration list for PBXNativeTarget "iTunesMediaDemo" */;
 			buildPhases = (
+				551363B4AD720CDF1AC7BEF9 /* [CP] Check Pods Manifest.lock */,
 				47F3AC1D23C7862F002A2CA7 /* Sources */,
 				47F3AC1E23C7862F002A2CA7 /* Frameworks */,
 				47F3AC1F23C7862F002A2CA7 /* Resources */,
+				860E3F4885780315455A2F1F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -267,12 +321,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		551363B4AD720CDF1AC7BEF9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iTunesMediaDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		860E3F4885780315455A2F1F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iTunesMediaDemo/Pods-iTunesMediaDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iTunesMediaDemo/Pods-iTunesMediaDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iTunesMediaDemo/Pods-iTunesMediaDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		47F3AC1D23C7862F002A2CA7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				474F39C823C7DCE5001B7B19 /* Constants.swift in Sources */,
+				474F39C323C7DB9A001B7B19 /* APIManager.swift in Sources */,
+				474F39C523C7DC3E001B7B19 /* APIResponse.swift in Sources */,
 				47F3AC2523C7862F002A2CA7 /* AppDelegate.swift in Sources */,
+				474F39CA23C7EBE9001B7B19 /* MediaCell.swift in Sources */,
 				47F3AC9123C791F4002A2CA7 /* DashboardVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,6 +536,7 @@
 		};
 		47F3AC4C23C78630002A2CA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4122ACA5EDE5258582E7DF72 /* Pods-iTunesMediaDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -456,6 +557,7 @@
 		};
 		47F3AC4D23C78630002A2CA7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DEB3E676D87FBC84D608BB3 /* Pods-iTunesMediaDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

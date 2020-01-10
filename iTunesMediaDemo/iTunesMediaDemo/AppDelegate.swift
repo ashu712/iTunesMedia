@@ -7,15 +7,22 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-
+    var activityData:ActivityData!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let size:CGSize = CGSize.init(width: 30, height: 30)
+        self.activityData = ActivityData.init(size: size, color: UIColor.blue, textColor: .white)
         return true
+    }
+    
+    class func getDelegate() -> AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -38,6 +45,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func showActivityIndicator() {
+        NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
+    }
+    
+    func hideActivityIndicator(){
+        NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
     }
 
 

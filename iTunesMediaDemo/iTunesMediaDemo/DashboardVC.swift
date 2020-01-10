@@ -12,13 +12,14 @@ class DashboardVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     var viewTopBar:UIView = UIView()
     var lblTitle:UILabel = UILabel()
     var tblViewInfo:UITableView = UITableView()
+    var arrFeeds:[[AnyHashable:Any]] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         self.createTopBar()
         self.createTableBar()
-        // Do any additional setup after loading the view.
+        self.getDataToLoad()
     }
     
     // Mark: - Top bar
@@ -54,6 +55,7 @@ class DashboardVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
 
         self.view.addSubview(viewTopBar)
 
+        // Set constraints
         NSLayoutConstraint.activate([
             
             viewTopBar.widthAnchor.constraint(equalTo: self.view.widthAnchor),
@@ -81,6 +83,7 @@ class DashboardVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         let heightToUse = self.view.frame.height - viewTopBar.frame.maxY
         
         tblViewInfo = UITableView(frame: CGRect(x: 0, y: viewTopBar.frame.maxY, width: self.view.frame.width, height: heightToUse))
+        tblViewInfo.register(MediaCell.self, forCellReuseIdentifier: "MediaCell")
         tblViewInfo.backgroundColor = UIColor.init(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
         tblViewInfo.translatesAutoresizingMaskIntoConstraints = false
         tblViewInfo.tableFooterView = UIView()
@@ -97,6 +100,27 @@ class DashboardVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         ])
 
     }
+    
+    // Mark: - Get data to load
+    func getDataToLoad() {
+        AppDelegate.getDelegate().showActivityIndicator()
+        
+        APIManager().fetchMediaFromServer(requestParameter: "", completion: { (APIResponse) in
+            if (APIResponse.response != nil) {
+                print(APIResponse.response ?? "")
+                let dictResponse : [AnyHashable:Any] = APIResponse.response as! [AnyHashable : Any]
+                print("The response dict is :- \(dictResponse)")
+                if let arr:[[AnyHashable:Any]] = dictResponse["results"] as? [[AnyHashable:Any]] {
+                    self.arrFeeds = arr
+                    self.tblViewInfo.reloadData()
+                }
+            } else {
+                print(APIResponse.message ?? "")
+            }
+            AppDelegate.getDelegate().hideActivityIndicator()
+        })
+
+    }
 
     // Mark: - Table View Data source and Delegates
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -104,29 +128,36 @@ class DashboardVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        return arrFeeds.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        NSLog("get cell")
-        let cell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: "Cell")
+        let cellIdendifier: String = "MediaCell"
+
+        let cell: MediaCell = tableView.dequeueReusableCell(withIdentifier: cellIdendifier, for: indexPath) as! MediaCell
+
         cell.backgroundColor = UIColor.white
         cell.separatorInset = UIEdgeInsets.init(top: 10, left: 20, bottom: 10, right: 10)
 
-        cell.textLabel!.text = "foo"
-        cell.detailTextLabel?.text = "bar"
-        cell.imageView?.image = UIImage.init(named: "ashu.png")
+        cell.lblTitle.text = arrFeeds[indexPath.row]["name"] as? String
+        cell.lblMediaType.text = "apple-music"
+        cell.imgViewMedia.image = UIImage.init(named: "ashu.png")
         
-        let itemSize = CGSize.init(width: 50, height: 50)
-        UIGraphicsBeginImageContextWithOptions(itemSize, false, UIScreen.main.scale);
-        let imageRect = CGRect.init(origin: CGPoint.zero, size: itemSize)
-        cell.imageView?.image!.draw(in: imageRect)
-        cell.imageView?.image! = UIGraphicsGetImageFromCurrentImageContext()!;
-        UIGraphicsEndImageContext();
-        cell.imageView?.contentMode = .scaleAspectFit
+        let url:URL = URL.init(string: arrFeeds[indexPath.row]["artworkUrl100"] as! String)!
+        getData(from: url) { data, response, error in
+            guard let data = data, error == nil else { return }
+            DispatchQueue.main.async() {
+                cell.imgViewMedia.image = UIImage(data: data)
+            }
+        }
 
+        cell.separatorInset = UIEdgeInsets.init(top: 0, left: 10, bottom: 0, right: 10)
 
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
     
     
@@ -134,5 +165,10 @@ class DashboardVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
 
     }
     
+    
+    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
+    }
+
 
 }
