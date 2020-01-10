@@ -51,12 +51,8 @@ class APIManager {
     }
     
     func fetchMediaFromServer(requestParameter: String!, completion:@escaping ((_ response: APIResponse) -> Void)) {
-        var apiURL = ""
-        if requestParameter != "" {
-            apiURL += "\(requestParameter!)"
-        }
         
-        getFromServer(requestURL: apiURL) { (responseObj) in
+        getFromServer(requestURL: requestParameter) { (responseObj) in
             do {
                 if responseObj.status && responseObj.response != nil {
                     let resp = responseObj.response as! NSDictionary

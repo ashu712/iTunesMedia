@@ -16,36 +16,44 @@ class MediaCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         // Add image view
-        let imgSize:CGFloat = 60
+        let imgSize:CGFloat = 80
         imgViewMedia = UIImageView.init(frame: CGRect.init(x: 10, y: 0, width: imgSize, height: imgSize))
+        imgViewMedia.contentMode = .scaleAspectFit
         self.contentView.addSubview(imgViewMedia)
         imgViewMedia.translatesAutoresizingMaskIntoConstraints = false
         
-        
         // Add Title
-        lblTitle.font = UIFont(name: "Helvetica", size: 18)
-        lblTitle.numberOfLines = 0
+        lblTitle.font = UIFont(name: "Helvetica", size: 17)
+        lblTitle.numberOfLines = 3
         lblTitle.sizeToFit()
-        lblTitle.textAlignment = .center
+        lblTitle.textAlignment = .left
         lblTitle.backgroundColor = UIColor.white
-        lblTitle.translatesAutoresizingMaskIntoConstraints = false
-        self.contentView.addSubview(lblTitle)
+        lblTitle.adjustsFontSizeToFitWidth = true
         
         // Add Title
         lblMediaType.font = UIFont(name: "Helvetica", size: 15)
-        lblMediaType.numberOfLines = 0
+        lblMediaType.numberOfLines = 1
         lblMediaType.sizeToFit()
-        lblMediaType.textAlignment = .center
+        lblMediaType.textAlignment = .left
         lblMediaType.backgroundColor = UIColor.white
-        lblMediaType.translatesAutoresizingMaskIntoConstraints = false
-        self.contentView.addSubview(lblMediaType)
+        lblMediaType.textColor = UIColor.darkGray
         
+        //Stack View
+        let stackView   = UIStackView()
+        stackView.axis  = NSLayoutConstraint.Axis.vertical
+        stackView.distribution  = UIStackView.Distribution.equalSpacing
+        stackView.alignment = UIStackView.Alignment.leading
+        stackView.spacing   = 5
+        stackView.addArrangedSubview(lblTitle)
+        stackView.addArrangedSubview(lblMediaType)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        self.contentView.addSubview(stackView)
+
         // set constraints
         NSLayoutConstraint.activate([
             imgViewMedia.widthAnchor.constraint(equalToConstant: imgSize),
@@ -53,12 +61,9 @@ class MediaCell: UITableViewCell {
             imgViewMedia.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             imgViewMedia.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             
-            lblTitle.leadingAnchor.constraint(equalTo: imgViewMedia.leadingAnchor, constant: imgViewMedia.frame.maxX+5.0),
-            lblTitle.topAnchor.constraint(equalTo: self.centerYAnchor, constant: -25),
-
-            lblMediaType.leadingAnchor.constraint(equalTo: lblTitle.leadingAnchor),
-            lblMediaType.topAnchor.constraint(equalTo: lblTitle.bottomAnchor, constant: 5),
-
+            stackView.leadingAnchor.constraint(equalTo: imgViewMedia.leadingAnchor, constant: imgViewMedia.frame.maxX+5.0),
+            stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+            stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
         
     }
@@ -69,7 +74,6 @@ class MediaCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     

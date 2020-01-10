@@ -11,6 +11,7 @@
 		474F39C523C7DC3E001B7B19 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474F39C423C7DC3E001B7B19 /* APIResponse.swift */; };
 		474F39C823C7DCE5001B7B19 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474F39C723C7DCE5001B7B19 /* Constants.swift */; };
 		474F39CA23C7EBE9001B7B19 /* MediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474F39C923C7EBE9001B7B19 /* MediaCell.swift */; };
+		474F39CC23C8E7E2001B7B19 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 474F39CB23C8E7E2001B7B19 /* loading.png */; };
 		47F3AC2523C7862F002A2CA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F3AC2423C7862F002A2CA7 /* AppDelegate.swift */; };
 		47F3AC2B23C78630002A2CA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47F3AC2A23C78630002A2CA7 /* Assets.xcassets */; };
 		47F3AC2E23C78630002A2CA7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47F3AC2D23C78630002A2CA7 /* Preview Assets.xcassets */; };
@@ -19,7 +20,6 @@
 		47F3AC4723C78630002A2CA7 /* iTunesMediaDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F3AC4623C78630002A2CA7 /* iTunesMediaDemoUITests.swift */; };
 		47F3AC9123C791F4002A2CA7 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F3AC9023C791F4002A2CA7 /* DashboardVC.swift */; };
 		47F3AC9323C7920A002A2CA7 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47F3AC9223C7920A002A2CA7 /* Storyboard.storyboard */; };
-		47F3AC9523C7BA46002A2CA7 /* ashu.png in Resources */ = {isa = PBXBuildFile; fileRef = 47F3AC9423C7BA46002A2CA7 /* ashu.png */; };
 		ED05469967B530532AA342AD /* Pods_iTunesMediaDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A650F9874A138691951FD3E2 /* Pods_iTunesMediaDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +47,7 @@
 		474F39C423C7DC3E001B7B19 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		474F39C723C7DCE5001B7B19 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		474F39C923C7EBE9001B7B19 /* MediaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCell.swift; sourceTree = "<group>"; };
+		474F39CB23C8E7E2001B7B19 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
 		47F3AC2123C7862F002A2CA7 /* iTunesMediaDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesMediaDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47F3AC2423C7862F002A2CA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47F3AC2A23C78630002A2CA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,7 +62,6 @@
 		47F3AC4823C78630002A2CA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47F3AC9023C791F4002A2CA7 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 		47F3AC9223C7920A002A2CA7 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
-		47F3AC9423C7BA46002A2CA7 /* ashu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ashu.png; sourceTree = "<group>"; };
 		A650F9874A138691951FD3E2 /* Pods_iTunesMediaDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iTunesMediaDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -111,7 +111,7 @@
 		47F3AC1823C7862F002A2CA7 = {
 			isa = PBXGroup;
 			children = (
-				47F3AC9423C7BA46002A2CA7 /* ashu.png */,
+				474F39CB23C8E7E2001B7B19 /* loading.png */,
 				47F3AC2323C7862F002A2CA7 /* iTunesMediaDemo */,
 				47F3AC3A23C78630002A2CA7 /* iTunesMediaDemoTests */,
 				47F3AC4523C78630002A2CA7 /* iTunesMediaDemoUITests */,
@@ -297,7 +297,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47F3AC9523C7BA46002A2CA7 /* ashu.png in Resources */,
+				474F39CC23C8E7E2001B7B19 /* loading.png in Resources */,
 				47F3AC3123C78630002A2CA7 /* LaunchScreen.storyboard in Resources */,
 				47F3AC9323C7920A002A2CA7 /* Storyboard.storyboard in Resources */,
 				47F3AC2E23C78630002A2CA7 /* Preview Assets.xcassets in Resources */,
